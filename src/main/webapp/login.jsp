@@ -34,7 +34,7 @@
                     <button type="button" class="btn mr-2">Back</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <p class="mt-3"><small>Do you want to create new account? <a href="register.html">Click me</a></small></p>
+                <p class="mt-3"><small>Do you want to create new account? <a href="register.jsp">Click me</a></small></p>
             </form>
         </div>
     </div>

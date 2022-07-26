@@ -46,7 +46,7 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Lorem ipsum dolor sit amet <span class="pull-right">$79.00</span></h1>
+							<h1>${requestScope.book}<span class="pull-right">$79.00</span></h1>
 							
 							<div class="container-fluid">
 								<div class="row">
