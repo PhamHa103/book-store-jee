@@ -46,7 +46,7 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>${requestScope.book}<span class="pull-right">$79.00</span></h1>
+							<h1>${requestScope.bookDetail.name}<span class="pull-right">${requestScope.bookDetail.unitPrice} VND</span></h1>
 							
 							<div class="container-fluid">
 								<div class="row">
@@ -55,9 +55,12 @@
 									</div>
 
 									<div class="col-md-7">
-										<p >Author: <b>Book author!</b></p>
+										<p >Author: <b>${requestScope.bookDetail.author}</b></p>
 
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, iste neque, ut recusandae quibusdam perferendis qui modi aliquam quaerat molestiae.</p>
+										<p>${requestScope.bookDetail.publisher} - ${requestScope.bookDetail.publishedYear}</p>
+										<p>
+											${requestScope.bookDetail.description}
+										</p>
 
 										<div class="row">
 							                <div class="col-sm-8">
@@ -66,7 +69,7 @@
 							                  	<div class="row">
 								                    <div class="col-sm-6">
 								                      	<div class="form-group">
-								                        	<input type="number" value="2" min="1" step="1" style="width: 80px;" />
+								                        	<input type="number" value="1" min="1" step="1" style="width: 80px;" />
 								                      	</div>
 								                    </div>
 

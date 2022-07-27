@@ -66,7 +66,7 @@
                         <span class="image">
                             <img src="images/product-1-720x480.jpg" alt=""/>
                         </span>
-                    <a href="/book_store_war_exploded/book_detail?id=${book.id}">
+                    <a href="/book_store_war/book_detail?id=${book.id}">
                         <h2>${book.name}</h2>
                         <p>
                             <strong>${book.unitPrice}</strong>
