@@ -22,4 +22,12 @@ public class  UserService {
     public User findByPhoneNumber(String phoneNumber) {
         return userRepository.findByPhoneNumber(phoneNumber);
     }
+
+      public boolean updateUser(User user){
+        return userRepository.updateUser(user);
+    }
+
+    public int getTotalStudent() {
+        return userRepository.getTotalStudent();
+    }
 }

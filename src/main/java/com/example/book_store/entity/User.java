@@ -1,7 +1,9 @@
 package com.example.book_store.entity;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
@@ -10,6 +12,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "USERS")
 @Data
+@NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User implements Serializable {
 
@@ -28,7 +31,7 @@ public class User implements Serializable {
     @Column(name = "FULL_NAME", nullable = false)
     String fullName;
 
-    @Column(nullable = false )
+    @Column(nullable = false)
     String email;
 
     @Column(nullable = false)
@@ -37,4 +40,13 @@ public class User implements Serializable {
     @Column(name = "PHONE_NUMBER", nullable = false)
     String phoneNumber;
 
+    public User(long id, String username, String password, String fullName, String email, String address, String phoneNumber) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullName = fullName;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
 }

@@ -23,60 +23,66 @@ public class RegisterServlet extends HttpServlet {
         String fullname = req.getParameter("fullname");
         String email = req.getParameter("email");
         String address = req.getParameter("address");
-        String phoneNumber = req.getParameter("phoneNumber");
+        String phoneNumber = req.getParameter("phone");
 
-        if (DataUtil.isNull(username)||username.equals("")) {
-            resp.sendRedirect("login.jsp?message=Username must not empty");
+        if (DataUtil.isNull(username) || username.equals("")) {
+            resp.sendRedirect("register.jsp?message=0");
             return;
         }
-        if (username.length()>20) {
-            resp.sendRedirect("login.jsp?message=Username no more than 20 characters");
+        if (username.length() > 20) {
+            resp.sendRedirect("register.jsp?message=1");
             return;
         }
-        if (DataUtil.isNull(password)||password.equals("")) {
-            resp.sendRedirect("login.jsp?message=Password must not empty");
+        if (DataUtil.isNull(password) || password.equals("")) {
+            resp.sendRedirect("register.jsp?message=2");
             return;
         }
-        if (password.length()>20||password.length()<8) {
-            resp.sendRedirect("login.jsp?message=Password must more than 8 characters and less than 16 characters");
+        if (password.length() > 20 || password.length() < 8) {
+            resp.sendRedirect("register.jsp?message=3");
             return;
         }
-        if (DataUtil.isNull(fullname)||fullname.equals("")) {
-            resp.sendRedirect("login.jsp?message=Fullname must not empty");
+        if (DataUtil.isNull(fullname) || fullname.equals("")) {
+            resp.sendRedirect("register.jsp?message=4");
             return;
         }
-        if (fullname.length()>50) {
-            resp.sendRedirect("login.jsp?message=Fullname no more than 50 characters");
+        if (fullname.length() > 50) {
+            resp.sendRedirect("register.jsp?message=5");
             return;
         }
-        if (DataUtil.isNull(email)||email.equals("")) {
-            resp.sendRedirect("login.jsp?message=Email must not empty");
+        if (DataUtil.isNull(email) || email.equals("")) {
+            resp.sendRedirect("register.jsp?message=6");
             return;
         }
-        if (DataUtil.isNull(address)||address.equals("")) {
-            resp.sendRedirect("login.jsp?message=Address must not empty");
+        if (DataUtil.isNull(address) || address.equals("")) {
+            resp.sendRedirect("register.jsp?message=7");
             return;
         }
-        if (DataUtil.isNull(phoneNumber)||phoneNumber.equals("")) {
-            resp.sendRedirect("login.jsp?message=Phone number must not empty");
+        if (DataUtil.isNull(phoneNumber) || phoneNumber.equals("")) {
+            resp.sendRedirect("register.jsp?message=8");
             return;
         }
 
         User userByUsername = userService.findByUsername(username);
         if (!DataUtil.isNull(userByUsername)) {
-            resp.sendRedirect("login.jsp?message=Username existed");
+            resp.sendRedirect("register.jsp?message=9");
             return;
         }
         User userByEmail = userService.findByEmail(email);
         if (!DataUtil.isNull(userByEmail)) {
-            resp.sendRedirect("login.jsp?message=Email existed");
+            resp.sendRedirect("register.jsp?message=10");
             return;
         }
         User userByPhoneNumber = userService.findByPhoneNumber(phoneNumber);
         if (!DataUtil.isNull(userByPhoneNumber)) {
-            resp.sendRedirect("login.jsp?message=Phone number existed");
+            resp.sendRedirect("register.jsp?message=11");
             return;
         }
-        resp.sendRedirect("login");
+        long id = 0;
+        User user = new User(id,username, password, fullname, email, address, phoneNumber);
+        boolean IsUpdatedUser = userService.updateUser(user);
+        if (!IsUpdatedUser)
+            resp.sendRedirect("register.jsp?message=12");
+        else
+            resp.sendRedirect("login.jsp");
     }
 }

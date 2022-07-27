@@ -4,6 +4,7 @@ import com.example.book_store.entity.User;
 import com.example.book_store.util.DataUtil;
 import com.example.book_store.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 public class UserRepository {
 
@@ -64,5 +65,20 @@ public class UserRepository {
             ex.printStackTrace();
         }
         return null;
+    }
+
+    public boolean updateUser(User user) {
+        try {
+            if (DataUtil.isNull(user)) {
+                return false;
+            }
+            session.beginTransaction();
+            session.save(user);
+            session.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }
