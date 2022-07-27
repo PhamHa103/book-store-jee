@@ -19,7 +19,7 @@
     <div class="container d-flex justify-content-center">
         <div id="login-form-container" class="p-5 m-5">
             <h2 class="text-center">Login</h2>
-            <form action="/book_store_war_exploded/login?returnUrl=${param.get('returnUrl')}" method="post">
+            <form action="/book_store_war/login?returnUrl=${param.get('returnUrl')}" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
