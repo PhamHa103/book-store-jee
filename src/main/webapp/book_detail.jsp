@@ -74,7 +74,7 @@
 								                    </div>
 
 								                    <div class="col-sm-6">
-							                      		<button type="submit">Add to Cart</button>
+							                      		<button href="cart" type="submit">Add to Cart</button>
 								                    </div>
 							                  	</div>
 							                </div>
