@@ -15,7 +15,7 @@
 
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
-        <url-pattern>/cart.jsp</url-pattern>
+        <url-pattern>/cart</url-pattern>
     </filter-mapping>
 
     <welcome-file-list>

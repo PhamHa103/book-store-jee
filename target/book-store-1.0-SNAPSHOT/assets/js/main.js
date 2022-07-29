@@ -1,5 +1,8 @@
-(function($) {
 
+(function($) {
+	$(".back").click(function (){
+		window.history.back();
+	})
 	var	$window = $(window),
 		$header = $('#header'),
 		$body = $('body');

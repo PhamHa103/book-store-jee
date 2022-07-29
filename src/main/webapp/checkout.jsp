@@ -55,7 +55,7 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>All (??? books)</th>
+                    <th>All (${requestScope.carts.size()} books)</th>
                     <th>Unit Price</th>
                     <th>Quantity</th>
                     <th>Price</th>
@@ -99,9 +99,9 @@
               <button type="button" class="w-100">Buy</button>
             </div>
           </div>
-          <!-- </c:forEach>
-                </c:if> -->
-          <c:if test="${requestScope.books.isEmpty()}">
+<%--          <!-- </c:forEach>--%>
+<%--                </c:if> -->--%>
+          <c:if test="${requestScope.carts.isEmpty()}">
             <c:out value="Không có cuốn sách nào" />
           </c:if>
         </section>

@@ -32,7 +32,7 @@
 								<c:if test="${sessionScope==null || !sessionScope.isLoggedIn.equals('1')}">
 									<li><a href="login.jsp?returnUrl=book_detail?id=${requestScope.bookDetail.id}">Login</a></li>
 								</c:if>
-								<li><a href="checkout.jsp" class="icon style2 fa-shopping-cart p-0 cart-shopping-icon position-relative">
+								<li><a href="cart" class="icon style2 fa-shopping-cart p-0 cart-shopping-icon position-relative">
 										<span class="label">Cart shopping</span>
 										<div class="cart-shopping-badge position-absolute d-flex align-items-center justify-content-center">
 											0</div>

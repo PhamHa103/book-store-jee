@@ -81,4 +81,18 @@ public class UserRepository {
             return false;
         }
     }
+
+    public User getByUser(String username) {
+        try {
+            if (DataUtil.isNullOrEmpty(username)) {
+                return null;
+            }
+            return session.createQuery("from User where username = :p_username", User.class)
+                    .setParameter("p_username", username)
+                    .getSingleResult();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
 }

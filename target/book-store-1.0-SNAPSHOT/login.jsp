@@ -31,13 +31,18 @@
                 </div>
                 <p class="text-danger">${param.get("message").equals("0") ? "Login fail" : ""} </p>
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn mr-2">Back</button>
+                    <button type="button" class="btn mr-2 back">Back</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <p class="mt-3"><small>Do you want to create new account? <a href="register.jsp">Click me</a></small></p>
             </form>
         </div>
     </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

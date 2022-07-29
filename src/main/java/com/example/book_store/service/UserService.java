@@ -26,8 +26,4 @@ public class  UserService {
       public boolean updateUser(User user){
         return userRepository.updateUser(user);
     }
-
-    public int getTotalStudent() {
-        return userRepository.getTotalStudent();
-    }
 }

@@ -35,7 +35,7 @@
                     <c:if test="${sessionScope==null || !sessionScope.isLoggedIn.equals('1')}">
                         <li><a href="login.jsp">Login</a></li>
                     </c:if>
-                    <li><a href="checkout.jsp"
+                    <li><a href="cart"
                            class="icon style2 fa-shopping-cart p-0 cart-shopping-icon position-relative">
                         <span class="label">Cart shopping</span>
                         <div

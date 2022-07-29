@@ -49,15 +49,33 @@
                     <input type="text" class="form-control" id="phone" placeholder="Enter phone"
                         name="phone" required>
                 </div>
-                <p class="text-danger">${!param.get("message").equals("") ? "${param.get('message')}" : ""}</p>
+                <p class="text-danger">
+                    ${param.get("message").equals("0") ? "Username must not empty" : ""}
+                    ${param.get("message").equals("1") ? "Username no more than 20 characters" : ""}
+                    ${param.get("message").equals("2") ? "Password must not empty" : ""}
+                    ${param.get("message").equals("3") ? "Password must more than 8 characters and less than 16 characters" : ""}
+                    ${param.get("message").equals("4") ? "Fullname must not empty" : ""}
+                    ${param.get("message").equals("5") ? "Fullname no more than 50 characters" : ""}
+                    ${param.get("message").equals("6") ? "Email must not empty" : ""}
+                    ${param.get("message").equals("7") ? "Address must not empty" : ""}
+                    ${param.get("message").equals("8") ? "Phone number must not empty" : ""}
+                    ${param.get("message").equals("9") ? "Username existed" : ""}
+                    ${param.get("message").equals("10") ? "Email existed" : ""}
+                    ${param.get("message").equals("11") ? "Phone number existed" : ""}
+                    ${param.get("message").equals("12") ? "Register fail" : ""}
+                </p>
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn mr-2">Back</button>
+                    <button type="button" class="btn mr-2 back">Back</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
     </div>
-
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
