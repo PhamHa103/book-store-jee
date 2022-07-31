@@ -16,14 +16,16 @@ public class CartRepository {
         }
     }
 
-    public Cart getByUser(Long id) {
+    public List<Cart> getCartbyUserId(Long id) {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             return session.createQuery("from Cart where userId = :p_user_id",Cart.class)
                     .setParameter("p_user_id",id)
-                    .getSingleResult();
+                    .list();
         }catch (Exception e){
             e.printStackTrace();
             return null;
         }
     }
+
+
 }
